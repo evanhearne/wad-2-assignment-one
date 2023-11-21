@@ -12,6 +12,7 @@ import { ReactQueryDevtools } from 'react-query/devtools';
 import MoviesContextProvider from "./contexts/moviesContext";
 import AddMovieReviewPage from './pages/addMovieReviewPage'
 import TVShowsPage from "./pages/tvShowsPage";
+import AvailableRegionsPage from "./pages/availableRegionsPage";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -38,6 +39,7 @@ const App = () => {
             <Route path="/" element={<HomePage />} />
             <Route path="*" element={ <Navigate to="/" /> } />
             <Route path="/tv" element={<TVShowsPage />} />
+            <Route path="/regions" element={<AvailableRegionsPage />} />
           </Routes>
         </MoviesContextProvider>
       </BrowserRouter>
