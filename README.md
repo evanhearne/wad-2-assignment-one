@@ -14,7 +14,7 @@ It is extended using additional endpoints, caching, search filters, [add more he
 + Added TV Shows Page with ability to "zoom in" to a specific show via the Details button.
 + Added Regions Page which allows user to see all the regions that TMDB knows about.
 + Added Popular Page with ability to "zoom in" to a specific actor via the Details button.
-+ etc
++ Added new search filter for languages in Home page.
 + etc
 
 ## Setup requirements.
