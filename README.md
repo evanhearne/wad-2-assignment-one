@@ -4,14 +4,16 @@ Name: Evan Hearne
 
 ## Overview.
 
-[A brief statement on the content of this repository.]
+This repository contains an extended version of the Week 7 Labs from Web App Development 2, a module undertaken in the Computer Science course in third year at South East Technological University (Waterford Campus).
+
+It is extended using additional endpoints, caching, search filters, [add more here later.]
 
 ### Features.
 [ A bullet-point list of the __new features__ you added to the Movies Fan app (and any modifications to existing features) .]
  
-+ Feature 1
-+ Feature 2
-+ Feature 3
++ Added TV Shows Page with ability to "zoom in" to a specific show via the Details button.
++ Added Regions Page which allows user to see all the regions that TMDB knows about.
++ Added Popular Page with ability to "zoom in" to a specific actor via the Details button.
 + etc
 + etc
 
@@ -19,23 +21,26 @@ Name: Evan Hearne
 
 [ Outline any non-standard setup steps necessary to run your app locally after cloning the repo.]
 
+```bash
+npm install
+npm start
+```
+
 ## API endpoints.
 
-[ List the __additional__ TMDB endpoints used, giving the description and pathname for each one.] 
-
-e.g.
-+ Discover list of movies - discover/movie
-+ Movie details - movie/:id
-+ Movie genres = /genre/movie/list
++ TV shows - /tv
++ TV show by id = /tv/:id
++ Watch Provider Regions - /watch/providers/regions
++ Popular actors - /person/popular
++ Popular actors by id - /person/:id
 
 ## Routing.
 
-[ List the __new routes__ supported by your app and state the associated page.]
-
-+ /blogs - displays all published blogs.
-+ /blogs/:id - displays a particular blog.
-+ /blogs/:id/comments - detail view of a particular blog and its comments.
-+ etc.
++ /tv - displays all tv shows.
++ /tv/:id - displays a particular tv show.
++ /regions - displays all watch provider regions known by TMDB.
++ /popular - displays all popular actors.
++ /popular/:id - displays a particular actor.
 
 [If relevant, state what aspects of your app are protected (i.e. require authentication) and what is public.]
 
