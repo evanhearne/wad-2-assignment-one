@@ -1,7 +1,10 @@
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import CardHeader from '@mui/material/CardHeader';
+import CardActions from '@mui/material/CardActions';
 import img from '../../images/film-poster-placeholder.png'
+import { Link } from 'react-router-dom';
+import Button from '@mui/material/Button';
 
 export default function popularCard({ popular }) {
   return (
@@ -19,6 +22,13 @@ export default function popularCard({ popular }) {
         }
         alt={popular.title}
       />
+      <CardActions>
+        <Button size="small" color="primary">
+          <Link to={`/popular/${popular.id}`}>
+            <p>Details</p>
+          </Link>
+        </Button>
+      </CardActions>
     </Card>
   );
 }
