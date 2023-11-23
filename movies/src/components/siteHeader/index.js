@@ -11,11 +11,13 @@ import { useNavigate } from "react-router-dom";
 import { styled } from '@mui/material/styles';
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import Switch from '@mui/material/Switch';
 
 const Offset = styled('div')(({ theme }) => theme.mixins.toolbar);
 
 const SiteHeader = ({ history }) => {
   const [anchorEl, setAnchorEl] = useState(null);
+  const [appBarColor, setAppBarColor] = useState("secondary");
   const open = Boolean(anchorEl);
 
   const theme = useTheme();
@@ -40,10 +42,26 @@ const SiteHeader = ({ history }) => {
     setAnchorEl(event.currentTarget);
   };
 
+  const handleColorChange = (event) => {
+    if (event.target.checked) {
+      // Change color to primary when the switch is toggled
+      setAppBarColor("primary");
+    } else {
+      // Change color back to secondary when the switch is untoggled
+      setAppBarColor("secondary");
+    }
+  };
+
   return (
     <>
-      <AppBar position="fixed" color="secondary">
+      <AppBar position="fixed" color={appBarColor}>
         <Toolbar>
+          <Switch
+            defaultUnchecked
+            color="default"
+            inputProps={{ 'aria-label': 'checkbox with default color' }}
+            onChange={handleColorChange}
+          />
           <Typography variant="h4" sx={{ flexGrow: 1 }}>
             TMDB Client
           </Typography>
