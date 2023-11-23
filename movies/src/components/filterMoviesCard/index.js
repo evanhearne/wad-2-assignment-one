@@ -25,6 +25,19 @@ export default function FilterMoviesCard(props) {
 
 const { data, error, isLoading, isError } = useQuery("genres", getGenres);
 
+const languages = [
+  { id: "0", name: "All" },
+  { id: "en", name: "English" },
+  { id: "es", name: "Spanish" },
+  { id: "fr", name: "French" },
+  { id: "de", name: "German" },
+  { id: "it", name: "Italian" },
+  { id: "ja", name: "Japanese" },
+  { id: "ko", name: "Korean" },
+  { id: "ru", name: "Russian" },
+  { id: "zh", name: "Chinese" },
+];
+
   if (isLoading) {
     return <Spinner />;
   }
@@ -48,6 +61,10 @@ const { data, error, isLoading, isError } = useQuery("genres", getGenres);
 
   const handleGenreChange = (e) => {
     handleChange(e, "genre", e.target.value);
+  };
+
+  const handleLanguageChange = (e) => {
+    handleChange(e, "language", e.target.value);
   };
 
   return (
@@ -84,6 +101,24 @@ const { data, error, isLoading, isError } = useQuery("genres", getGenres);
               return (
                 <MenuItem key={genre.id} value={genre.id}>
                   {genre.name}
+                </MenuItem>
+              );
+            })}
+          </Select>
+        </FormControl>
+        <FormControl sx={{...formControl}}>
+          <InputLabel id="language-label">Language</InputLabel>
+          <Select
+            labelId="language-label"
+            id="language-select"
+            defaultValue=""
+            value={props.languageFilter}
+            onChange={handleLanguageChange}
+          >
+            {languages.map((language) => {
+              return (
+                <MenuItem key={language.id} value={language.id}>
+                  {language.name}
                 </MenuItem>
               );
             })}
