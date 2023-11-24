@@ -57,7 +57,6 @@ const SiteHeader = ({ history }) => {
       <AppBar position="fixed" color={appBarColor}>
         <Toolbar>
           <Switch
-            defaultUnchecked
             color="default"
             inputProps={{ 'aria-label': 'checkbox with default color' }}
             onChange={handleColorChange}

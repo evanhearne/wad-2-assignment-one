@@ -7,7 +7,7 @@ import AddToFavoritesIcon from '../components/cardIcons/addToFavorites'
 
 const HomePage = (props) => {
 
-  const {  data, error, isLoading, isError }  = useQuery('discover', getMovies)
+  const {  data, error, isLoading, isError }  = useQuery('discover', getMovies);
 
   if (isLoading) {
     return <Spinner />
@@ -30,6 +30,7 @@ const HomePage = (props) => {
       action={(movie) => {
         return <AddToFavoritesIcon movie={movie} />
       }}
+      paginationbar={() => {return null}}
     />
 );
 };
